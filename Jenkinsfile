@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Build and Install') {
             steps {
-                echo 'Building..'
+                nodejs('12.6') { npm install }
             }
         }
         stage('Unit Testing') {
             steps {
-                echo 'Testing..'
+                nodejs('12.6') { npm test }
             }
         }
         stage('Deploy Locally') {
